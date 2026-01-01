@@ -58,19 +58,14 @@ fun AppContent() {
 
     // Данные, передаваемые между экранами
     var projectName by remember { mutableStateOf("") }
-    var projectDescription by remember { mutableStateOf("") }
-    var selectedType by remember { mutableStateOf("Мобильное приложение") }
+    var projectPath by remember { mutableStateOf("") }
     var selectedStarter by remember { mutableStateOf<StarterTemplate?>(null) }
 
     when (currentScreen) {
         is Screen.Constructor -> {
             ConstructorScreen (
-                projectName = projectName,
-                projectDescription = projectDescription,
-                selectedType = selectedType,
-                onProjectNameChange = { projectName = it },
-                onProjectDescriptionChange = { projectDescription = it },
-                onSelectedTypeChange = { selectedType = it },
+                nameProject = projectName,
+                pathProject = projectPath,
                 onNavigateToStarter = {
                     if (projectName.isNotEmpty()) {
                         currentScreen = Screen.Starter

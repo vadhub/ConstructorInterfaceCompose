@@ -8,9 +8,11 @@ data class Element(
     val events: MutableList<ElementEvent>,
 )
 
-enum class Type(val type: String) {
-    TEXTVIEW("TEXTVIEW"),
-    EDITTEXT("EDITTEXT"),
-    BUTTON("BUTTON"),
-    SPINNER("SPINNER")
+enum class Type() {
+    TEXTVIEW,
+    EDITTEXT,
+    BUTTON,
+    SPINNER,
+    CHECKBOX,
+    OTHER
 }
